@@ -66,4 +66,61 @@ section {
     align-items: center;
 }
 
+#uv-index {
+    margin-left: 5px;
+    padding: 5px 10px;
+}
+
+
+.forecast-panel {
+    padding-top: 50px;
+}
+
+
+.container {
+    display: inline;
+    border-radius: 25%;
+}
+
+
+.card-header,
+.card-body {
+    text-align: center;
+}
+
+
+.card-header {
+    background-color: rgb(10, 131, 46);
+    color: white;
+}
+
+
+.card-body {
+    background-color: lightgreen;
+}
+
+
+
+
+
+
+/* Classes Added to Elements */
+
+
+.favorable {
+    background-color: green;
+    color: white;
+}
+
+
+.moderate {
+    background-color: yellow;
+    color: black;
+}
+
+
+.severe {
+    background-color: red;
+    color: white;
+}
 
