@@ -1,0 +1,69 @@
+body {
+    margin: 5px;
+}
+
+
+main {
+    display: flex;
+}
+
+
+section {
+    margin-top: 10px;
+}
+
+
+.header {
+    display: flex;
+    justify-content: center;
+    background-color: brown;
+}
+
+
+.search-panel {
+    width: 25%;
+    margin: 10px 20px 0 10px;
+    padding: 10px 0 10px 10px;
+    background-color: lightgoldenrodyellow;
+}
+
+
+.search-button-panel {
+    margin-left: -52px;
+}
+
+
+.city-list-box {
+    margin-top: 5px;
+}
+
+
+.city-name {
+    align-content: center;
+    width: 80%;
+}
+
+
+.results-panel {
+    width: 75%;
+    padding-bottom: 10px;
+    visibility: hidden;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+.current-conditions-panel {
+    border: 1px solid black;
+    border-right: none;
+    padding-left: 10px;
+    padding-bottom: 30px;
+}
+
+
+.name-block,
+.uv-index-block {
+    display: flex;
+    align-items: center;
+}
+
+
