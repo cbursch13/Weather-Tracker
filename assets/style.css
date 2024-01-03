@@ -124,3 +124,33 @@ section {
     color: white;
 }
 
+
+
+/* Viewports Styling*/
+
+@media screen and (max-width: 575px) {
+    .search-panel {
+        width: 40%;
+    }
+
+
+    .search-button-panel {
+        margin-left: 0px;
+    }
+
+
+    .search-panel h3 {
+        font-size: 15px;
+    }
+
+
+    .form-row {
+        display: block;
+        text-align: center;
+    }
+
+
+    .results-panel {
+        width: 60%;
+    }
+}
