@@ -16,15 +16,20 @@ section {
 .header {
     display: flex;
     justify-content: center;
-    background-color: brown;
+    background-color: rgb(42, 161, 165);
+    border-radius: 40cap;
 }
 
 
 .search-panel {
+    font: white;
     width: 25%;
     margin: 10px 20px 0 10px;
     padding: 10px 0 10px 10px;
-    background-color: lightgoldenrodyellow;
+    background-color: rgb(6, 179, 150);
+    border-radius: 2cqb;
+    align-self: top;
+    color: white;
 }
 
 
@@ -40,7 +45,12 @@ section {
 
 .city-name {
     align-content: center;
-    width: 80%;
+    width: 40%;
+    background-color: brown;
+    color: white;
+    font-weight: bolder;
+    border-color: beige;
+    margin: 4px;
 }
 
 
@@ -53,10 +63,12 @@ section {
 
 
 .current-conditions-panel {
-    border: 1px solid black;
-    border-right: none;
+    border: 1px solid rgb(214, 29, 29);
+    border-width: 1cap;
+    border-radius: 4cqb;
     padding-left: 10px;
     padding-bottom: 30px;
+    width: 30%;
 }
 
 
@@ -92,6 +104,7 @@ section {
 .card-header {
     background-color: rgb(10, 131, 46);
     color: white;
+    border-radius: 2cqb;
 }
 
 
@@ -105,7 +118,6 @@ section {
 
 
 /* Classes Added to Elements */
-
 
 .favorable {
     background-color: green;
@@ -126,7 +138,7 @@ section {
 
 
 
-/* Viewports Styling*/
+/*Media Query*/
 
 @media screen and (max-width: 575px) {
     .search-panel {

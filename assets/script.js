@@ -59,6 +59,28 @@ function getListCity(coordinates) {
     })
 }
 
+
+function getFutureWeather(data) {
+    for (var i = 0; i < 5; i++) {
+        var futureWeather = {
+            date: convertUnixTime(data, i),
+            icon: "http://openweathermap.org/img/wn/" + data.daily[i + 1].weather[0].icon + "@2x.png",
+            temp: data.daily[i + 1].temp.day.toFixed(1),
+            humidity: data.daily[i + 1].humidity
+        }
+
+        
+        var currentSelector = "#day-" + i;
+        $(currentSelector)[0].textContent = futureWeather.date;
+        currentSelector = "#img-" + i;
+        $(currentSelector)[0].src = futureWeather.icon;
+        currentSelector = "#temp-" + i;
+        $(currentSelector)[0].textContent = "Temp: " + futureWeather.temp + " \u2109";
+        currentSelector = "#hum-" + i;
+        $(currentSelector)[0].textContent = "Humidity: " + futureWeather.humidity + "%";
+    }
+}
+
 function getCurrentWeather(data) {
     $(".results-panel").addClass("visible");
 
@@ -84,28 +106,6 @@ function getCurrentWeather(data) {
 
     getFutureWeather(data);
 }
-
-function getFutureWeather(data) {
-    for (var i = 0; i < 5; i++) {
-        var futureWeather = {
-            date: convertUnixTime(data, i),
-            icon: "http://openweathermap.org/img/wn/" + data.daily[i + 1].weather[0].icon + "@2x.png",
-            temp: data.daily[i + 1].temp.day.toFixed(1),
-            humidity: data.daily[i + 1].humidity
-        }
-
-
-        var currentSelector = "#day-" + i;
-        $(currentSelector)[0].textContent = futureWeather.date;
-        currentSelector = "#img-" + i;
-        $(currentSelector)[0].src = futureWeather.icon;
-        currentSelector = "#temp-" + i;
-        $(currentSelector)[0].textContent = "Temp: " + futureWeather.temp + " \u2109";
-        currentSelector = "#hum-" + i;
-        $(currentSelector)[0].textContent = "Humidity: " + futureWeather.humidity + "%";
-    }
-}
-
 function titleCase(city) {
     var updatedCity = city.toLowerCase().split(" ");
     var returnedCity = "";
@@ -115,3 +115,36 @@ function titleCase(city) {
     }
     return returnedCity;
 }
+
+function convertUnixTime(data, index) {
+    const dateObject = new Date(data.daily[index + 1].dt * 1000);
+
+
+    return (dateObject.toLocaleDateString());
+}
+
+
+$("#search-button").on("click", function (e) {
+    e.preventDefault();
+
+
+    findCity();
+
+
+    $("form")[0].reset();
+})
+
+
+$(".city-list-box").on("click", ".city-name", function () {
+
+
+    var coordinates = (localStorage.getItem($(this)[0].textContent)).split(" ");
+    coordinates[0] = parseFloat(coordinates[0]);
+    coordinates[1] = parseFloat(coordinates[1]);
+
+
+    $("#city-name")[0].textContent = $(this)[0].textContent + " (" + moment().format('M/D/YYYY') + ")";
+
+
+    getListCity(coordinates);
+})
