@@ -66,7 +66,8 @@ function getFutureWeather(data) {
             date: convertUnixTime(data, i),
             icon: "http://openweathermap.org/img/wn/" + data.daily[i + 1].weather[0].icon + "@2x.png",
             temp: data.daily[i + 1].temp.day.toFixed(1),
-            humidity: data.daily[i + 1].humidity
+            humidity: data.daily[i + 1].humidity,
+            wind_speed: data.daily[i + 1].wind_speed,
         }
 
         
@@ -78,6 +79,8 @@ function getFutureWeather(data) {
         $(currentSelector)[0].textContent = "Temp: " + futureWeather.temp + " \u2109";
         currentSelector = "#hum-" + i;
         $(currentSelector)[0].textContent = "Humidity: " + futureWeather.humidity + "%";
+        currentSelector = "#wind-" + i;
+        $(currentSelector)[0].textContent = "Wind Speed: " + futureWeather.wind_speed + " MPH";
     }
 }
 
