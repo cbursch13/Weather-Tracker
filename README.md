@@ -6,7 +6,7 @@ For this homework assignment, I created my weather tracker using the open weathe
 
 ## Usage
 
-![Screenshot](assets/Weather_Tracker1.png)
+![Screenshot](assets/Weather_Tracker_Update.png)
 
 ## Links
 
